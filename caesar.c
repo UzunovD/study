@@ -5,12 +5,12 @@
 #include <ctype.h>
 #include <stdio.h>
 
-
+viod get_ciphertext(key);
 int main(int argc, string argv[])
 {
     // check CLI argument
     int key;
-    char someVar = argv[1]; //1. (см ниже). Это чтоб код было понятнее читать, имя переменной конечно нормально надо дать.
+    char cipher = argv[1]; //1. (см ниже). Это чтоб код было понятнее читать, имя переменной конечно нормально надо дать.
     if (argc != 2)
     {
         printf("Usage: ./caesar key\n");
@@ -19,19 +19,23 @@ int main(int argc, string argv[])
     else
     {
         char symbol;
-        for (int i = 0, n = strlen(argv[1]); i < n; i++) // strlen каждый раз считает на каждый проход for. Может её лучше заранее посчитать перед циклом?
+        for (int i = 0, n = strlen(cipher); i < n; i++) // strlen каждый раз считает на каждый проход for. Может её лучше заранее посчитать перед циклом?
         {
-            symbol = argv[1][i]; //1. аргументы лучше в начале определять см выше
+            symbol = cipher[i]; //1. аргументы лучше в начале определять см выше
             if (symbol < 48 || symbol > 57)
             {
                 printf("Usage: ./caesar key\n");
                 return 1;  //Exit
             }
         }
-        key = atoi(argv[1]);
+        key = atoi(cipher);
     }
+    get_ciphertext(key);
+}
 
- //   -------------------------------------------------------------------------------------
+
+viod get_ciphertext(key)
+{
     //Get plaintext from user
     string plaintext = get_string("plaintext: ");
 
