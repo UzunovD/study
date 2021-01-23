@@ -13,7 +13,7 @@ int main(void)
     int sentence = 0;
 
     // analyze the text
-    for (int i = 0, n = strlen(text); i < n; i++) //strlen(text) - перед циклом
+    for (int i = 0, n = strlen(text); i < n; i++) //strlen(text) - перед циклом ~ тут все ок
     {
         if ((text[i] >= 65 && text[i] <= 90) || (text[i] >= 97 && text[i] <= 122))
         {
