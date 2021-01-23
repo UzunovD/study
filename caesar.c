@@ -10,6 +10,7 @@ int main(int argc, string argv[])
 {
     // check CLI argument
     int key;
+    char someVar = argv[1]; //1. (см ниже). Это чтоб код было понятнее читать, имя переменной конечно нормально надо дать.
     if (argc != 2)
     {
         printf("Usage: ./caesar key\n");
@@ -18,9 +19,9 @@ int main(int argc, string argv[])
     else
     {
         char symbol;
-        for (int i = 0, n = strlen(argv[1]); i < n; i++)
+        for (int i = 0, n = strlen(argv[1]); i < n; i++) // strlen каждый раз считает на каждый проход for. Может её лучше заранее посчитать перед циклом?
         {
-            symbol = argv[1][i];
+            symbol = argv[1][i]; //1. аргументы лучше в начале определять см выше
             if (symbol < 48 || symbol > 57)
             {
                 printf("Usage: ./caesar key\n");
@@ -30,6 +31,7 @@ int main(int argc, string argv[])
         key = atoi(argv[1]);
     }
 
+ //   -------------------------------------------------------------------------------------
     //Get plaintext from user
     string plaintext = get_string("plaintext: ");
 
