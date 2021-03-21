@@ -40,10 +40,8 @@ button2.addEventListener("click", checkAnswer2);
 
 function checkAnswer2(event) {
     const field = button2.previousElementSibling;
-    console.log(field);
     let color;
     const answer = field.value.toLowerCase();
-    console.log(answer);
     let result;
     if (answer === "switzerland") {
             color = "green";
